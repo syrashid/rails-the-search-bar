@@ -22,7 +22,7 @@ puts ']'
 puts 'Completed Seeding Ingredients'
 
 puts 'Seeding Sample Cocktails'
-@tom = Cocktail.create(name: 'Tom Collins')
+@tom = Cocktail.create(name: 'Tom Collins', remote_photo_url: 'https://c7.uihere.com/files/948/354/439/cocktail-vodka-tom-collins-mojito-martini-ginger.jpg')
 Cocktail.create(name: 'Apple Martini')
 Cocktail.create(name: 'Long Island Ice Tea')
 Cocktail.create(name: 'Californication')
