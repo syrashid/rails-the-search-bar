@@ -1,6 +1,10 @@
 require 'open-uri'
 require 'json'
 
+puts 'Destroying Old Doses...'
+Dose.destroy_all
+puts 'Destroying Old Cocktails...'
+Cocktail.destroy_all
 puts 'Destroying Old Ingredients...'
 Ingredient.destroy_all
 
@@ -15,3 +19,61 @@ end
 puts ']'
 puts 'Completed Seeding Ingredients'
 
+puts 'Seeding Sample Cocktails'
+@tom = Cocktail.create(name: 'Tom Collins')
+Cocktail.create(name: 'Apple Martini')
+Cocktail.create(name: 'Long Island Ice Tea')
+Cocktail.create(name: 'Californication')
+Cocktail.create(name: 'Pina Colada')
+Cocktail.create(name: 'Margarita')
+Cocktail.create(name: 'Caipirinha')
+Cocktail.create(name: 'Mint Julep')
+Cocktail.create(name: 'Mai Tai')
+Cocktail.create(name: 'Mojito')
+puts 'Completed Seeding Drinks'
+
+puts 'Making you a drink: Tom Collins'
+
+puts '🍸'
+
+@ice = Ingredient.where(name: 'Ice').first
+puts '🥶 Adding Ice'
+@gin = Ingredient.where(name: 'Gin').first
+puts '🌲 Adding Gin'
+@lemonjuice = Ingredient.where(name: 'Lemon juice').first
+puts '🍋 Adding Lemon'
+@syrup = Ingredient.where(name: 'Sugar Syrup').first
+puts '🍭 Adding Sugar'
+@clubsoda = Ingredient.where(name: 'Carbonated water').first
+puts '🥤 Adding Club Soda'
+
+puts 'Mixing'
+
+150.times { print '*' }
+
+Dose.create(description: '1.5 Cups',
+            cocktail: @tom,
+            ingredient: @ice)
+
+Dose.create(description: '2 Oz',
+            cocktail: @tom,
+            ingredient: @gin)
+
+Dose.create(description: '0.75 Oz',
+            cocktail: @tom,
+            ingredient: @lemonjuice)
+
+Dose.create(description: '0.5 Oz',
+            cocktail: @tom,
+            ingredient: @syrup)
+
+Dose.create(description: '1.5 Cups',
+            cocktail: @tom,
+            ingredient: @ice)
+
+Dose.create(description: '2 Oz',
+            cocktail: @tom,
+            ingredient: @clubsoda)
+
+puts ' '
+puts 'Done... Enjoy!'
