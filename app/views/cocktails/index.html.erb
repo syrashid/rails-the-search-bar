@@ -1,1 +1,9 @@
 <h1>Sweet Tits!</h1>
+
+<div class="container">
+  <% @cocktails.each do |cocktail| %>
+  <%= link_to cocktail.name, cocktail_path(cocktail), class: "btn btn-primary mt-3" %>
+  <% end %>
+</div>
+
+
