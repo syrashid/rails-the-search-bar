@@ -7,6 +7,8 @@ puts 'Destroying Old Cocktails...'
 Cocktail.destroy_all
 puts 'Destroying Old Ingredients...'
 Ingredient.destroy_all
+puts 'Destroying Old Users...'
+User.destroy_all
 
 puts 'Seeding New Ingredients...'
 print '['
@@ -48,6 +50,11 @@ puts '🍭 Adding Sugar'
 puts '🥤 Adding Club Soda'
 
 puts 'Mixing'
+
+@sy = User.create(first_name: 'Sy',
+                  last_name: 'Rashid',
+                  email: 'sy@gmail.com',
+                  password: 'password')
 
 150.times { print '*' }
 
