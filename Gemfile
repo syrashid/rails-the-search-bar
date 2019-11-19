@@ -42,6 +42,8 @@ gem 'font-awesome-sass', '~> 5.6.1'
 gem 'simple_form'
 # gem devise for authentication of users
 gem 'devise'
+# gem dotenv-rails for hiding keys in dev and test environs
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
