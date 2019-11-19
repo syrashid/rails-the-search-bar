@@ -1,4 +1,7 @@
 <h1>Sweet Tits Show  Page</h1>
 
-
+<h1><%= @cocktail.name %></h1>
+<% @ingredients.each do |ingredient| %>
+  <p><%= ingredient.name %></p>
+<% end %>
 <%= link_to 'Edit Profile', edit_user_registration_path %>
