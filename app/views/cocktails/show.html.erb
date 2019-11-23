@@ -14,9 +14,10 @@
     </p>
 <% end %>
 
-<h1>Add an Ingredient</h1>
-<%= render 'shared/dose_form' %>
-
+<% if current_user == @cocktail.user %>
+  <h1>Add an Ingredient</h1>
+  <%= render 'shared/dose_form' %>
+<% end %>
 <% @cocktail.reviews.each do |review| %>
   <p><%= review.text %></p>
   <p><%= review.rating %></p>
