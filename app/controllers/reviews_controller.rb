@@ -4,8 +4,11 @@ class ReviewsController < ApplicationController
 
     @cocktail = Cocktail.find(params[:cocktail_id])
     @review.cocktail = @cocktail
-    @review.save
-    redirect_to cocktail_path(@cocktail)
+    if @review.save
+      redirect_to cocktail_path(@cocktail)
+    else
+      render 'cocktail/show'
+    end
   end
 
   private
