@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :cocktails, only: [:index, :show, :new, :create] do
     resources :doses, only: [:create]
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: [:create]
   end
   resources :doses, only: [:destroy]
   root to: 'pages#home'

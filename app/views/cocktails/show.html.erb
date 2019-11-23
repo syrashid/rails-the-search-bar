@@ -7,4 +7,15 @@
 <% @ingredients.each do |ingredient| %>
   <p><%= ingredient.name %></p>
 <% end %>
-<%= link_to 'Edit Profile', edit_user_registration_path %>
+
+<% @cocktail.reviews.each do |review| %>
+  <p><%= review.text %></p>
+  <p><%= review.rating %></p>
+<% end %>
+
+<%= simple_form_for [@cocktail, @review] do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :rating %>
+  <%= f.input :text %>
+  <%= f.submit "Add Your Review", class: "btn btn-primary" %>
+<% end %>
