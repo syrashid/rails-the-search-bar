@@ -13,11 +13,7 @@
 <% end %>
 
 <h1>Add an Ingredient</h1>
-<%= simple_form_for [@cocktail, @dose] do |f|%>
-        <%= f.input :description, :label_html => { :class => 'form-label' } %>
-        <%= f.association :ingredient, collection: Ingredient.order('name ASC'), input_html: { class: 'select2' }, :label_html => { :class => 'form-label' } %>
-        <%= f.submit "Add Ingredient", class: "btn btn-dark btn-lg" %>
-<% end %>
+<%= render 'shared/dose_form' %>
 
 <% @cocktail.reviews.each do |review| %>
   <p><%= review.text %></p>
