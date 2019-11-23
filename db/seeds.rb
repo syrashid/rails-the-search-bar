@@ -21,17 +21,24 @@ end
 puts ']'
 puts 'Completed Seeding Ingredients'
 
+@sy = User.create(first_name: 'Sy',
+                  last_name: 'Rashid',
+                  email: 'sy@gmail.com',
+                  password: 'password')
+
 puts 'Seeding Sample Cocktails'
-@tom = Cocktail.create(name: 'Tom Collins', remote_photo_url: 'https://c7.uihere.com/files/948/354/439/cocktail-vodka-tom-collins-mojito-martini-ginger.jpg')
-Cocktail.create(name: 'Apple Martini')
-Cocktail.create(name: 'Long Island Ice Tea')
-Cocktail.create(name: 'Californication')
-Cocktail.create(name: 'Pina Colada')
-Cocktail.create(name: 'Margarita')
-Cocktail.create(name: 'Caipirinha')
-Cocktail.create(name: 'Mint Julep')
-Cocktail.create(name: 'Mai Tai')
-Cocktail.create(name: 'Mojito')
+@tom = Cocktail.create(name: 'Tom Collins',
+                       user: @sy,
+                       remote_photo_url: 'https://c7.uihere.com/files/948/354/439/cocktail-vodka-tom-collins-mojito-martini-ginger-thumb.jpg')
+Cocktail.create(name: 'Apple Martini', user: @sy)
+Cocktail.create(name: 'Long Island Ice Tea', user: @sy)
+Cocktail.create(name: 'Californication', user: @sy)
+Cocktail.create(name: 'Pina Colada', user: @sy)
+Cocktail.create(name: 'Margarita', user: @sy)
+Cocktail.create(name: 'Caipirinha', user: @sy)
+Cocktail.create(name: 'Mint Julep', user: @sy)
+Cocktail.create(name: 'Mai Tai', user: @sy)
+Cocktail.create(name: 'Mojito', user: @sy)
 puts 'Completed Seeding Drinks'
 
 puts 'Making you a drink: Tom Collins'
@@ -50,11 +57,6 @@ puts '🍭 Adding Sugar'
 puts '🥤 Adding Club Soda'
 
 puts 'Mixing'
-
-@sy = User.create(first_name: 'Sy',
-                  last_name: 'Rashid',
-                  email: 'sy@gmail.com',
-                  password: 'password')
 
 150.times { print '*' }
 
