@@ -2,7 +2,11 @@ class CocktailsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
 
   def index
-    @cocktails = Cocktail.all
+    if params[:query].present?
+      @cocktails = Cocktail.search(params[:query])
+    else
+      @cocktails = Cocktail.all
+    end
   end
 
   def show
