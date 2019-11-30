@@ -6,4 +6,11 @@ class Cocktail < ApplicationRecord
   belongs_to :user
   validates :name, presence: true, uniqueness: true
   mount_uploader :photo, PhotoUploader
+
+  def search_data
+    attributes.merge(
+      user_name: user(&:first_name),
+      ingredient_names: ingredients.map(&:name)
+    )
+  end
 end
