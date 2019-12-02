@@ -6,10 +6,10 @@ class DosePolicy < ApplicationPolicy
   end
 
   def create?
-    record.user == user
+    record.cocktail.user == user
   end
 
   def destroy?
-    record.user == user
+    record.cocktail.user == user
   end
 end

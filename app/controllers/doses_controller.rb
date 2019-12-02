@@ -3,8 +3,8 @@ class DosesController < ApplicationController
     @cocktail = Cocktail.find(params[:cocktail_id])
     @dose = Dose.new(dose_params)
     @review = Review.new
-    authorize @dose
     @dose.cocktail = @cocktail
+    authorize @dose
     @dose.save ? (redirect_to cocktail_path(@cocktail)) : (render 'cocktails/show')
   end
 

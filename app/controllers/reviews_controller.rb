@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     @dose = Dose.new
     @review.cocktail = @cocktail
+    authorize @review
     if @review.save
       redirect_to cocktail_path(@cocktail)
     else
