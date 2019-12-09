@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :doses, only: [:destroy]
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      resources :cocktails, only: [:index, :show, :update]
+      resources :cocktails, only: [:index, :show, :update, :create ]
     end
   end
   root to: 'pages#home'

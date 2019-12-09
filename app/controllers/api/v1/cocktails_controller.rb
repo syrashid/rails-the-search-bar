@@ -16,6 +16,17 @@ class Api::V1::CocktailsController < Api::V1::BaseController
     end
   end
 
+  def create
+    @cocktail = Cocktail.new(cocktail_params)
+    @cocktail.user = current_user
+    authorize @cocktail
+    if @cocktail.save
+      render :show, status: :created
+    else
+      render_error
+    end
+  end
+
   private
 
   def set_cocktail
