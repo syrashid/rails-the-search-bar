@@ -1,1 +1,69 @@
 // Specific CSS for your home-page
+.splash {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.1372) 58.31%, rgba(0, 0, 0, 0.9016) 95.44%, rgba(0, 0, 0, 0.98) 95.45%), url("landscape.gif");
+  background-size: cover;
+}
+
+
+.button-splash {
+  width: 100vw;
+  height: 100vh;
+}
+
+.press-start {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 48px;
+  line-height: 48px;
+  color: var(--white);
+  &:hover{
+    text-decoration: none;
+    color: var(--white);
+  }
+}
+
+.blinking{
+    animation:blinkingText 0.75s infinite;
+}
+@keyframes blinkingText{
+    0%{     opacity: 1;    }
+    100%{   opacity: 0;    }
+}
+
+.arrow {
+  text-align: center;
+  margin: 8% 0;
+  a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+  }
+}
+
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+#title-text-svg {
+  position: absolute;
+  width: 40vw;
+  left: 35%;
+  top: 12%;
+  filter: blur(1px);
+}

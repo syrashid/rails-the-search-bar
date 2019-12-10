@@ -11,3 +11,12 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+:root {
+  --black: #000000;
+  --white: #FFFFFF;
+}
+
+body {
+  background-color: var(--black);
+}
