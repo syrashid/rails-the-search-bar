@@ -1,0 +1,30 @@
+.arcade-btn {
+  background-color: #9C9C9C;
+  color: black;
+  font-family: 'Press Start 2P', cursive;
+  border: none;
+  text-align: center;
+  border-radius: 2px;
+  &:hover {
+    text-decoration: none;
+    background-color: #8C8C8C;
+    color: black;
+  }
+}
+
+.sm-btn {
+  padding: 7px 32px;
+  font-size: 20px;
+}
+
+.lg-btn {
+  padding: 32px 32px;
+  font-size: 28px;
+}
+
+
+
+.index-button-bar {
+  margin: auto;
+  padding: 0 4vw;
+}

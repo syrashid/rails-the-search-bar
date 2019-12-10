@@ -1,16 +1,14 @@
-<div class="d-flex">
-
-
-  <%= link_to root_path, class: 'ml-3' do %>
+<div class="d-flex navbar-container">
+  <%= link_to root_path do %>
   <svg id="navbar-text-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 286.07 210.1"><defs><style>.a92291af-fa09-42c9-9067-1f66af476a86,.f2fce815-de98-4aed-919e-9d13d09b0220{font-size:37.7px;font-family:lazer84;}.a92291af-fa09-42c9-9067-1f66af476a86{fill:#fff;}.f2fce815-de98-4aed-919e-9d13d09b0220{fill:#4d8ab3;}</style></defs><title>TitleText</title><text id="b910110d-7552-4f75-add4-e5677830ac41" data-name="THE     SEARCH                 BAR" class="a92291af-fa09-42c9-9067-1f66af476a86" transform="translate(11.69 76.34) rotate(-10)">THE<tspan x="0" y="45.24" xml:space="preserve">    SEARCH</tspan><tspan x="0" y="90.48" xml:space="preserve">                BAR</tspan></text><text class="f2fce815-de98-4aed-919e-9d13d09b0220" transform="translate(9.4 72) rotate(-10)">THE<tspan x="0" y="45.24" xml:space="preserve">    SEARCH</tspan><tspan x="0" y="90.48" xml:space="preserve">                BAR</tspan></text>
   </svg>
   <% end %>
-  <%= form_tag cocktails_path, method: :get, class: "form-inline  flex-fill d-flex mr-4" do %>
+  <%= form_tag cocktails_path, method: :get, class: "form-inline  flex-fill d-flex" do %>
   <%= text_field_tag :query,
   params[:query],
   class: "form-control flex-grow-1 arcade-search",
-    placeholder: "SEARCH BY NAME OR INGREDIENT"
+    placeholder: "Search By Name Or Ingredient"
     %>
-    <%= submit_tag "SUBMIT", class: "ml-3 arcade-button" %>
+    <%= submit_tag "SUBMIT", class: "ml-3 arcade-btn sm-btn" %>
     <% end %>
-  </div>
+</div>

@@ -1,14 +1,16 @@
 
+<div class="index-button-bar d-flex">
+  <% if user_signed_in? %>
+    <%= link_to "Add a New Drink",  new_cocktail_path, class: "arcade-btn lg-btn flex-grow-1 mr-3"%>
+  <% end %>
+
+  <%= link_to 'Download Drink List',  api_v1_cocktails_path, class: "arcade-btn lg-btn flex-grow- ml-3" %>
+</div>
+
 <div class="container">
   <% @cocktails.each do |cocktail| %>
-  <%= link_to cocktail.name, cocktail_path(cocktail), class: "btn btn-primary mt-3" %>
+  <%= link_to cocktail.name, cocktail_path(cocktail), class: "btn btn-light" %>
   <% end %>
 </div>
 
-<% if user_signed_in? %>
-<%= link_to "Add a New Drink",  new_cocktail_path, class: "btn btn-primary"%>
-<% end %>
 
-<div class="container">
-  <%= link_to 'Download Drink List',  api_v1_cocktails_path, class: "btn btn-primary mt-3" %>
-</div>
