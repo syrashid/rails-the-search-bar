@@ -1,4 +1,13 @@
-<div class="cartridge">
-  <h1><%=cocktail.name %></h1>
-
+<div class="cartridge m-3">
+  <div class="label">
+    <p class="label-name"><%=cocktail.name %></p>
+    <img class="label-image" src="<%=cocktail.photo %>" alt="cocktail photo">
+    <div class="rating-stars">
+      <% cocktail.avg_reviews.round.times do %>
+      <span>
+        <%= image_tag "star.png", alt: "X", class: 'star' %>
+      </span>
+      <% end %>
+    </div>
+  </div>
 </div>

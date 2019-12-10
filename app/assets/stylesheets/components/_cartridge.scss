@@ -1,9 +1,44 @@
 .cartridge-container {
-
+  padding: 0 4vw;
 }
 
 .cartridge {
   width: 228px;
   height: 256px;
-  background-image: url(cartridge.png)
+  position: relative;
+  background-image: url(cartridge.png);
+}
+
+.label {
+  position: absolute;
+  left: 90px;
+  width: 110px;
+  height: 176px;
+  background: #C4C4C4;
+  border-radius: 0px 0px 7px 7px;
+  padding: 2px 0px;
+}
+
+.label-name {
+  font-family: 'lazer84';
+  color: #4D8AB3;
+  font-size: 14px;
+  height: 40px;
+  overflow: hidden;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.label-image {
+  height: 100px;
+  width: 110px;
+  object-fit: cover;
+  margin-bottom: 4px;
+}
+
+.rating-stars {
+  text-align: center;
+}
+.star {
+  width: 16px;
 }
