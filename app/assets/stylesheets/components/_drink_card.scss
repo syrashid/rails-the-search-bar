@@ -31,7 +31,19 @@
   color: #D34496;
   font-family: 'Press Start 2P', cursive;
   font-size: 20px;
+  padding: 0px;
   &:hover {
     color: #b53a81;
   }
+}
+
+#ingredient-form {
+  margin-top: 4vh;
+  display: none;
+}
+
+.form-arcade-input {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 20px;
+  text-align: left;
 }

@@ -11,31 +11,35 @@
         <% end %>
       </div>
     </div>
-    <div class="right-side col-8">
-      <% @cocktail.doses.each do |dose| %>
+    <div class="right-side col-8 d-flex flex-column">
+      <div class="drink-ingredients">
+        <% @cocktail.doses.each do |dose| %>
         <p class="drink-info-text">> INSERT <%= dose.description.upcase %> <%= dose.ingredient.name.upcase %>
           <% if current_user == @cocktail.user %>
-            <%= link_to 'X'.html_safe, dose_path(dose), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-button'  %>
-                </%>
+          <%= link_to 'X'.html_safe, dose_path(dose), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-button'  %>
+          </%>
           <% end %>
-          </p>
-      <% end %>
-      <span class="drink-info-text">> INSERT </span>
-      <span class="add-ingredient">NEW INGREDIENT</span>
-      <% if current_user == @cocktail.user %>
-        <h1>Add an Ingredient</h1>
+        </p>
+        <% end %>
+
+        <% if current_user == @cocktail.user %>
+        <span class="drink-info-text">> INSERT </span>
+        <button class="add-ingredient" onclick="toggleForm()">NEW INGREDIENT</button>
         <%= render 'shared/dose_form' %>
-      <% end %>
-      <% @cocktail.reviews.each do |review| %>
-        <p><%= review.text %></p>
-        <p><%= review.rating %></p>
-      <% end %>
+        <% end %>
+      </div>
+        <%= link_to 'DOWNLOAD DRINK',  api_v1_cocktail_path(@cocktail), class: "arcade-btn stretch-btn mt-4" %>
     </div>
   </div>
 
   <%= render 'shared/review_form' %>
 
-  <%= link_to 'Download Drink',  api_v1_cocktail_path(@cocktail), class: "btn btn-primary mt-4" %>
+  <% @cocktail.reviews.each do |review| %>
+  <p><%= review.text %></p>
+  <p><%= review.rating %></p>
+  <% end %>
+
+
 </div>
 
 

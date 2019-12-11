@@ -1,5 +1,5 @@
-<%= simple_form_for [@cocktail, @dose] do |f|%>
-        <%= f.input :description, :label_html => { :class => 'form-label' } %>
-        <%= f.association :ingredient, collection: Ingredient.order('name ASC'), input_html: { class: 'select2' }, :label_html => { :class => 'form-label' } %>
-        <%= f.submit "Add Ingredient", class: "btn btn-dark btn-lg" %>
+<%= simple_form_for [@cocktail, @dose], html: { id: 'ingredient-form' } do |f|%>
+        <%= f.input :description, :input_html => { class: 'form-arcade-input' }, label: false, placeholder: 'Amount (ex: 2 OZ, 4 TSP)' %>
+        <%= f.association :ingredient, collection: Ingredient.order('name ASC'), input_html: { class: 'form-arcade-input' },label: false, prompt: 'Select Ingredient' %>
+        <%= f.submit "ADD INGREDIENT", class: "arcade-btn stretch-btn" %>
 <% end %>
