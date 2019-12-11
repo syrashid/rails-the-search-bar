@@ -15,7 +15,7 @@
       <div class="drink-ingredients">
         <% @cocktail.doses.each do |dose| %>
         <p class="drink-info-text">> INSERT <%= dose.description.upcase %> <%= dose.ingredient.name.upcase %>
-          <% if current_user == @cocktail.user %>
+          <% if policy(dose).destroy? %>
           <%= link_to 'X'.html_safe, dose_path(dose), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-button'  %>
           </%>
           <% end %>
@@ -37,7 +37,7 @@
   <h1 class="review-label">PAST REVIEWS</h1>
 
   <% @cocktail.reviews.each do |review| %>
-  <div class="review mt-5">
+  <div class="review mb-5 mt-3">
     <% review.rating.times do %>
     <span>
       <%= image_tag "star.png", alt: "X", class: 'star-lg mx-2' %>
