@@ -1,10 +1,10 @@
 
 <div class="index-button-bar d-flex">
   <% if user_signed_in? %>
-    <%= link_to "Add a New Drink",  new_cocktail_path, class: "arcade-btn lg-btn flex-grow-1 mr-3"%>
+    <%= link_to "Add a New Drink",  new_cocktail_path, class: "arcade-btn lg-btn flex-grow-1 mr-5"%>
   <% end %>
 
-  <%= link_to 'Download Drink List',  api_v1_cocktails_path, class: "arcade-btn lg-btn flex-grow-1 ml-3" %>
+  <%= link_to 'Download Drink List',  api_v1_cocktails_path, class: "arcade-btn lg-btn flex-grow-1" %>
 </div>
 
 <div class='cartridge-container d-flex flex-wrap justify-content-between'>

@@ -3,7 +3,7 @@ class Review < ApplicationRecord
 
   belongs_to :cocktail
   validates :text, presence: true
-  validates :rating, presence: true
+  validates :rating, presence: true, inclusion: { in: (1..5) }
 
   def update_average
     total_number = cocktail.reviews.count

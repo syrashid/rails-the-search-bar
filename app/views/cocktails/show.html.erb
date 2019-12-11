@@ -28,15 +28,23 @@
         <%= render 'shared/dose_form' %>
         <% end %>
       </div>
-        <%= link_to 'DOWNLOAD DRINK',  api_v1_cocktail_path(@cocktail), class: "arcade-btn stretch-btn mt-4" %>
+      <%= link_to 'DOWNLOAD DRINK',  api_v1_cocktail_path(@cocktail), class: "arcade-btn stretch-btn mt-4" %>
     </div>
   </div>
 
   <%= render 'shared/review_form' %>
 
+  <h1 class="review-label">PAST REVIEWS</h1>
+
   <% @cocktail.reviews.each do |review| %>
-  <p><%= review.text %></p>
-  <p><%= review.rating %></p>
+  <div class="review mt-5">
+    <% review.rating.times do %>
+    <span>
+      <%= image_tag "star.png", alt: "X", class: 'star-lg mx-2' %>
+    </span>
+    <% end %>
+    <p class="drink-info-text"><%= review.text.upcase %></p>
+  </div>
   <% end %>
 
 
