@@ -28,3 +28,11 @@
   margin: auto;
   padding: 0 4vw;
 }
+
+.delete-button {
+  color: firebrick;
+  &:hover {
+    text-decoration: none;
+    color: darkred;
+  }
+}

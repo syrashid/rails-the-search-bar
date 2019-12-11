@@ -1,30 +1,43 @@
-<h1>Sweet Tits Show  Page</h1>
+<div class="show-container">
+  <div class="drink-info row">
+    <div class="left-side col-4">
+      <img src="<%= @cocktail.photo %>" alt="cocktail photo" class= "drink-info-photo">
+      <h1 class="drink-info-label"><%= @cocktail.name %></h1>
+      <div class="rating-stars d-flex justify-content-center">
+        <% @cocktail.avg_reviews.round.times do %>
+        <span>
+          <%= image_tag "star.png", alt: "X", class: 'star-lg mx-2' %>
+        </span>
+        <% end %>
+      </div>
+    </div>
+    <div class="right-side col-8">
+      <% @cocktail.doses.each do |dose| %>
+        <p class="drink-info-text">> INSERT <%= dose.description.upcase %> <%= dose.ingredient.name.upcase %>
+          <% if current_user == @cocktail.user %>
+            <%= link_to 'X'.html_safe, dose_path(dose), method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-button'  %>
+                </%>
+          <% end %>
+          </p>
+      <% end %>
+      <span class="drink-info-text">> INSERT </span>
+      <span class="add-ingredient">NEW INGREDIENT</span>
+      <% if current_user == @cocktail.user %>
+        <h1>Add an Ingredient</h1>
+        <%= render 'shared/dose_form' %>
+      <% end %>
+      <% @cocktail.reviews.each do |review| %>
+        <p><%= review.text %></p>
+        <p><%= review.rating %></p>
+      <% end %>
+    </div>
+  </div>
+
+  <%= render 'shared/review_form' %>
+
+  <%= link_to 'Download Drink',  api_v1_cocktail_path(@cocktail), class: "btn btn-primary mt-4" %>
+</div>
 
 
-<h1><%= @cocktail.name %></h1>
-
-<img src="<%= @cocktail.photo %>" alt="cocktail photo">
-<% @cocktail.doses.each do |dose| %>
-  <p><%= dose.description %>
-    <%= dose.ingredient.name %>
-    <% if current_user == @cocktail.user %>
-      <%= link_to '<i class="far fa-trash-alt"></i>'.html_safe, dose_path(dose), method: :delete, data: { confirm: 'Are you sure?' }  %>
-          </%>
-    <% end %>
-    </p>
-<% end %>
-
-<% if current_user == @cocktail.user %>
-  <h1>Add an Ingredient</h1>
-  <%= render 'shared/dose_form' %>
-<% end %>
-<% @cocktail.reviews.each do |review| %>
-  <p><%= review.text %></p>
-  <p><%= review.rating %></p>
-<% end %>
-
-<%= render 'shared/review_form' %>
-
-<%= link_to 'Download Drink',  api_v1_cocktail_path(@cocktail), class: "btn btn-primary mt-4" %>
 
 
