@@ -1,33 +1,55 @@
-<h2>Sign up</h2>
+<div class="standard-container">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+  <h1 class="standard-label">Sign Up</h1>
 
-  <div class="form-inputs">
-    <%= f.input :first_name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "first name" }%>
-    <%= f.input :last_name,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "last name" }%>
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :first_name,
+                  required: true,
+                  autofocus: true,
+                  input_html: { class: 'form-arcade-input mt-4' },
+                  label: false,
+                  placeholder: 'First Name'
+                  %>
+      <%= f.input :last_name,
+                  required: true,
+                  autofocus: true,
+                  input_html: { class: 'form-arcade-input mt-4' },
+                  label: false,
+                  placeholder: 'Last Name'
+                  %>
+      <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  input_html: { class: 'form-arcade-input mt-4' },
+                  label: false,
+                  placeholder: 'megaman@capcom.com'
+                  %>
+      <%= f.input :password,
+                  required: true,
+                  input_html: { class: 'form-arcade-input mt-4' },
+                  label: false,
+                  placeholder: 'Create Password: 6 Char Min'
+                  %>
+      <%= f.input :password_confirmation,
+                  required: true,
+                  input_html: { class: 'form-arcade-input mt-4' },
+                  label: false,
+                  placeholder: 'Confirm Password'
+                  %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit "SIGN UP",class: "arcade-btn stretch-btn mt-3" %>
+    </div>
+  <% end %>
+
+  <div class="login">
+  <%= link_to "OR LOG IN", new_session_path(resource_name), class: "arcade-btn stretch-btn mt-3" %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
+</div>
 
-<%= render "devise/shared/links" %>
+<!--   <%#= f.input :name, :input_html => { class: 'form-arcade-input mt-4 mb-4' }, label: false, placeholder: 'Name Your Cocktail' %> -->
