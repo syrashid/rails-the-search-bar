@@ -64,8 +64,44 @@
 
 #title-text-svg {
   position: absolute;
-  width: 40vw;
-  left: 35%;
-  top: 12%;
+  width: 53vw;
+  left: 28%;
+  top: 8%;
   filter: blur(1px);
+}
+
+@media screen and (max-width: 1024px) {
+  #title-text-svg {
+    width: 60vw;
+    left: 25%;
+    top: 9%;
+  }
+
+  .arrow {
+    margin: 8% 0;
+    a {
+      font-size: 16px;
+    }
+  }
+
+  .press-start {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+}
+
+@media screen and (max-width: 568px) {
+
+  #title-text-svg {
+width: 90vw;
+    left: 12%;
+    top: 16%;
+  }
+
+  .press-start {
+    font-size: 24px;
+    line-height: 24px;
+  }
+
 }
