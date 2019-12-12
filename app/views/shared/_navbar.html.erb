@@ -1,6 +1,6 @@
-<div class="d-flex navbar-container">
+<div class="navbar-container">
   <%= link_to root_path do %>
-  <svg id="navbar-text-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 286.07 210.1">
+  <svg id="navbar-text-svg" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260.07 180.1">
     <defs>
       <style>.a92291af-fa09-42c9-9067-1f66af476a86,.f2fce815-de98-4aed-919e-9d13d09b0220{font-size:37.7px;font-family:lazer84;}.a92291af-fa09-42c9-9067-1f66af476a86{fill:#fff;}.f2fce815-de98-4aed-919e-9d13d09b0220{fill:#4d8ab3;}
       </style>
@@ -19,7 +19,7 @@
   <%= form_tag cocktails_path, method: :get, class: "form-inline flex-fill d-flex" do %>
     <%= text_field_tag :query, params[:query],
                       class: "form-control flex-grow-1 arcade-search",
-                      placeholder: "Search By Name Or Ingredient"%>
-    <%= submit_tag "SUBMIT", class: "ml-3 arcade-btn sm-btn" %>
+                      placeholder: "Name Or Ingredient"%>
+    <%= submit_tag "SEARCH", class: "arcade-btn sm-btn navbar-btn" %>
   <% end %>
 </div>

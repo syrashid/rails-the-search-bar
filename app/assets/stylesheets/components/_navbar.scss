@@ -2,6 +2,7 @@
   width: 15vw;
   z-index: 2;
   filter: blur(0.6px);
+  padding-right: 2vw;
 }
 
 .arcade-search {
@@ -14,4 +15,29 @@
 
 .navbar-container {
   padding: 0 4vw;
+  display: flex;
+}
+
+@media screen and (max-width: 1024px) {
+  .arcade-search {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .navbar-container {
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 12vh;
+  }
+
+  #navbar-text-svg {
+  width: 90vw;
+  z-index: 2;
+  filter: blur(0.6px);
+  }
+
+  .arcade-search {
+    margin-bottom: 4vh;
+  }
 }

@@ -28,7 +28,9 @@
   font-size: 28px;
 }
 
-
+.navbar-btn {
+  margin-left: 1rem;
+}
 
 .index-button-bar {
   margin: auto;
@@ -40,5 +42,30 @@
   &:hover {
     text-decoration: none;
     color: darkred;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .sm-btn {
+  padding: 7px 24px;
+  font-size: 16px;
+}
+
+  .lg-btn {
+    padding: 20px 20px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .sm-btn {
+    width: 100%;
+  }
+  .navbar-btn {
+    margin: 0;
+  }
+  .lg-btn {
+    padding: 18px 18px;
+    font-size: 16px;
   }
 }
