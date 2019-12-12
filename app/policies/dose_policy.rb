@@ -6,10 +6,16 @@ class DosePolicy < ApplicationPolicy
   end
 
   def create?
-    record.cocktail.user == user
+    verify_owner?
   end
 
   def destroy?
+    verify_owner?
+  end
+
+  private
+
+  def verify_owner?
     record.cocktail.user == user
   end
 end

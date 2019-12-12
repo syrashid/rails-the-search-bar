@@ -2,6 +2,7 @@ class Review < ApplicationRecord
   after_create :update_average
 
   belongs_to :cocktail
+
   validates :text, presence: true
   validates :rating, presence: true, inclusion: { in: (1..5) }
 

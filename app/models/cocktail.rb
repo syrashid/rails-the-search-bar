@@ -5,8 +5,10 @@ class Cocktail < ApplicationRecord
   has_many :ingredients, through: :doses
   has_many :reviews, dependent: :destroy
   belongs_to :user
+
   validates :name, presence: true, uniqueness: true
   validates :photo, presence: true
+
   mount_uploader :photo, PhotoUploader
 
   def search_data
