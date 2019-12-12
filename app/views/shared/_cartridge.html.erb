@@ -4,9 +4,7 @@
     <img class="label-image" src="<%=cocktail.photo %>" alt="cocktail photo">
     <div class="rating-stars">
       <% cocktail.avg_reviews.round.times do %>
-      <span>
-        <%= image_tag "star.png", alt: "X", class: 'star' %>
-      </span>
+      <span><%= image_tag "star.png", alt: "X", class: 'star' %></span>
       <% end %>
     </div>
   </div>

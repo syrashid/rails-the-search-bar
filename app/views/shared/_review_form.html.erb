@@ -1,7 +1,14 @@
 <h1 class="review-label">ADD A &nbspREVIEW!</h1>
+
 <%= simple_form_for [@cocktail, @review] do |f| %>
   <%= f.error_notification %>
-  <%= f.input :rating, :input_html => { class: 'form-arcade-input mt-4' }, label: false, placeholder: 'Rating (1 to 5 Stars)' %>
-  <%= f.input :text, :input_html => { class: 'form-arcade-input mt-4', rows: 5 }, label: false, placeholder: 'Review Description...' %>
+  <%= f.input :rating,
+              :input_html => { class: 'form-arcade-input mt-4' },
+              label: false,
+              placeholder: 'Rating (1 to 5 Stars)' %>
+  <%= f.input :text,
+              :input_html => { class: 'form-arcade-input mt-4', rows: 5 },
+              label: false,
+              placeholder: 'Review Description...' %>
   <%= f.submit "ADD YOUR REVIEW", class: "arcade-btn stretch-btn mt-4" %>
 <% end %>
