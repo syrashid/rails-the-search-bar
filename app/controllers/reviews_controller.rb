@@ -5,11 +5,7 @@ class ReviewsController < ApplicationController
     @dose = Dose.new
     @review.cocktail = @cocktail
     authorize @review
-    if @review.save
-      redirect_to cocktail_path(@cocktail)
-    else
-      render 'cocktails/show'
-    end
+    @review.save ? (redirect_to cocktail_path(@cocktail)) : (render 'cocktails/show')
   end
 
   private

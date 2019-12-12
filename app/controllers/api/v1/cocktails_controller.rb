@@ -9,22 +9,14 @@ class Api::V1::CocktailsController < Api::V1::BaseController
   def show; end
 
   def update
-    if @cocktail.update(cocktail_params)
-      render :show
-    else
-      render_error
-    end
+    @cocktail.update(cocktail_params) ? (render :show) : (render_error)
   end
 
   def create
     @cocktail = Cocktail.new(cocktail_params)
     @cocktail.user = current_user
     authorize @cocktail
-    if @cocktail.save
-      render :show, status: :created
-    else
-      render_error
-    end
+    @cocktail.save ? (render :show, status: :created) : (render_error)
   end
 
   private
@@ -39,7 +31,6 @@ class Api::V1::CocktailsController < Api::V1::BaseController
   end
 
   def render_error
-    render json: { errors: @cocktail.errors.full_messages },
-      status: :unprocessable_entity
+    render json: { errors: @cocktail.errors.full_messages }, status: :unprocessable_entity
   end
 end
