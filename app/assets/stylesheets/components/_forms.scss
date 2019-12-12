@@ -40,8 +40,11 @@
   .form-arcade-input {
     font-size: 16px;
   }
+
 }
 
 @media screen and (max-width: 568px) {
-
+    .form-arcade-input {
+    font-size: 12px;
+  }
 }

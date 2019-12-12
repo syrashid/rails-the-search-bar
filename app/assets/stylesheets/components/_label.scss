@@ -4,3 +4,13 @@
   color: #4D8AB3;
   text-shadow: 3px 3px 2px #FFFFFF;
 }
+
+@media screen and (max-width: 1024px) {
+  .standard-label {
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  font-size: 32px;
+}
