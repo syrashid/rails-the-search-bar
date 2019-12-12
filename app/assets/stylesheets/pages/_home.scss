@@ -1,8 +1,10 @@
 // Specific CSS for your home-page
 .splash {
-  width: 100vw;
   height: 100vh;
-  background: linear-gradient(180deg, rgba(10, 10, 10, 0.1372) 58.31%, rgba(0, 0, 0, 0.9016) 95.44%, rgba(0, 0, 0, 0.98) 95.45%), url("landscape.gif");
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.1372) 58.31%, rgba(0, 0, 0, 0.9016) 95.44%, rgba(0, 0, 0, 0.98) 95.45%), url("landscape.gif") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
 }
 
@@ -24,21 +26,21 @@
 }
 
 .blinking{
-    animation:blinkingText 0.75s infinite;
+  animation:blinkingText 0.75s infinite;
 }
 @keyframes blinkingText{
-    0%{     opacity: 1;    }
-    100%{   opacity: 0;    }
+  0%{     opacity: 1;    }
+  100%{   opacity: 0;    }
 }
 
 .arrow {
   text-align: center;
   margin: 8% 0;
   a {
-  color: white;
-  text-decoration: none;
-  font-family: 'Press Start 2P', cursive;
-  font-size: 20px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
   }
 }
 
