@@ -38,7 +38,31 @@
     color: #b53a81;
   }
   &:focus {
-  outline: none;
+    outline: none;
+  }
 }
+
+@media screen and (max-width: 1024px) {
+  .drink-info-text, .add-ingredient {
+    font-size: 16px;
+  }
+  .star-lg {
+    width: 34px;
+  }
+
+  .drink-info-label {
+    font-size: 36px;
+  }
+
+  .review-label {
+    font-size: 36px;
+  }
+
+}
+
+@media screen and (max-width: 568px) {
+  .rating-stars {
+    margin-bottom: 8vh;
+  }
 }
 

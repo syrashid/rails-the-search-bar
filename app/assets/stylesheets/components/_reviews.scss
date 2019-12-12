@@ -5,3 +5,15 @@
   text-shadow: 3px 3px 2px #FFFFFF;
   margin-top: 8vh;
 }
+
+@media screen and (max-width: 1024px) {
+  .review-label {
+    font-size: 36px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .review-label {
+    font-size: 32px;
+  }
+}

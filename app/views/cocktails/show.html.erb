@@ -1,7 +1,7 @@
 <div class="show-container">
   <div class="drink-info row">
 
-    <div class="left-side col-4">
+    <div class="left-side col-12 col-md-6 col-lg-4">
       <img src="<%= @cocktail.photo %>" alt="cocktail photo" class= "drink-info-photo">
       <h1 class="drink-info-label"><%= @cocktail.name %></h1>
       <div class="rating-stars d-flex justify-content-center">
@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <div class="right-side col-8 d-flex flex-column">
+    <div class="right-side col-12 col-md-6 col-lg-8 d-flex flex-column">
       <div class="drink-ingredients">
         <% @cocktail.doses.each do |dose| %>
         <p class="drink-info-text">> INSERT <%= dose.description.upcase %> <%= dose.ingredient.name.upcase %>
@@ -49,8 +49,6 @@
     <p class="drink-info-text"><%= review.text.upcase %></p>
   </div>
   <% end %>
-
-
 </div>
 
 
