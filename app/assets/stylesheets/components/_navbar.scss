@@ -16,6 +16,7 @@
 .navbar-container {
   padding: 0 4vw;
   display: flex;
+  margin-bottom: 4vh;
 }
 
 @media screen and (max-width: 1024px) {
@@ -39,5 +40,7 @@
 
   .arcade-search {
     margin-bottom: 4vh;
+    text-align: center;
+    padding: 0;
   }
 }

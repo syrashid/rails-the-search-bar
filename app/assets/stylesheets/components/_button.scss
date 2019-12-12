@@ -24,10 +24,13 @@
 }
 
 .lg-btn {
-  padding: 32px 32px;
-  font-size: 28px;
+  padding: 24px 24px;
+  font-size: 24px;
 }
 
+.left-btn {
+  margin-right: 3rem;
+}
 .navbar-btn {
   margin-left: 1rem;
 }
@@ -47,9 +50,9 @@
 
 @media screen and (max-width: 1024px) {
   .sm-btn {
-  padding: 7px 24px;
-  font-size: 16px;
-}
+    padding: 7px 24px;
+    font-size: 16px;
+  }
 
   .lg-btn {
     padding: 20px 20px;
@@ -60,6 +63,7 @@
 @media screen and (max-width: 568px) {
   .sm-btn {
     width: 100%;
+    padding: 18px 18px;
   }
   .navbar-btn {
     margin: 0;
@@ -67,5 +71,15 @@
   .lg-btn {
     padding: 18px 18px;
     font-size: 16px;
+  }
+
+  .index-button-bar {
+    flex-direction: column;
+    margin-bottom: 8vh;
+  }
+
+  .left-btn {
+    margin-right: 0;
+    margin-bottom: 4vh;
   }
 }
