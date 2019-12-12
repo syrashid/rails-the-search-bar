@@ -5,3 +5,28 @@
 .show-container {
   padding: 0 8vw;
 }
+
+.cartridge-container {
+  padding: 6vh 4vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 1024px) {
+
+}
+
+@media screen and (max-width: 568px) {
+  .cartridge-container {
+    padding: 2vh 2vw;
+    display: block;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 100%;
+  }
+
+  .cartridge-container::-webkit-scrollbar {
+    display: none;
+  }
+}

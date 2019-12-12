@@ -1,12 +1,12 @@
-.cartridge-container {
-  padding: 6vh 4vw;
-}
 
 .cartridge {
   width: 228px;
   height: 256px;
   position: relative;
   background-image: url(cartridge.png);
+  display: inline-block;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .label {
@@ -43,3 +43,6 @@
 .star {
   width: 16px;
 }
+
+
+

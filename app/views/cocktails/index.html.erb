@@ -17,7 +17,7 @@
   <%= link_to 'Download Drink List',  api_v1_cocktails_path, class: "arcade-btn lg-btn flex-grow-1" %>
 </div>
 
-<div class='cartridge-container d-flex flex-wrap justify-content-between'>
+<div class='cartridge-container justify-content-center'>
   <% @cocktails.each do |cocktail| %>
     <%= link_to cocktail_path(cocktail) do%>
       <%= render 'shared/cartridge', cocktail: cocktail %>
