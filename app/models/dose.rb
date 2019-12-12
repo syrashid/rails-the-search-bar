@@ -4,4 +4,12 @@ class Dose < ApplicationRecord
   validates :description, presence: true
   # Validate an ingredient is unique per cocktail
   validates :ingredient, uniqueness: { scope: :cocktail }
+
+  after_create :reindex_cocktail
+  after_destroy :reindex_cocktail
+  private
+
+  def reindex_cocktail
+    cocktail.reindex
+  end
 end
