@@ -66,7 +66,7 @@ puts 'Completed Seeding Drinks'
 @tequila = Ingredient.where(name: 'Tequila').first
 @triplesec = Ingredient.where(name: 'Triple sec').first
 @lemonjuice = Ingredient.where(name: 'Lemon juice').first
-@syrup = Ingredient.where(name: 'Sugar Syrup').first
+@syrup = Ingredient.where(name: 'Sugar syrup').first
 @clubsoda = Ingredient.where(name: 'Carbonated water').first
 @pineapplejuice = Ingredient.where(name: 'Pineapple juice').first
 @drum = Ingredient.where(name: 'Spiced rum').first
@@ -303,9 +303,9 @@ puts '🤔'
 @cocktails = Cocktail.all
 
 @cocktails.each do |cocktail|
-  rand(5..10).times do
+  rand(3..10).times do
     Review.create(text: @sample_reviews.sample,
-                  rating: rand(2..5),
+                  rating: rand(1..5),
                   cocktail: cocktail)
   end
 end
