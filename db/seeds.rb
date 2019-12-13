@@ -18,6 +18,8 @@ ingredients.each do |ingredient|
   Ingredient.create(name: ingredient['strIngredient1'])
   print '+ '
 end
+Ingredient.create(name: 'Cachaca')
+Ingredient.create(name: 'Mint leaves')
 puts ']'
 puts 'Completed Seeding Ingredients'
 
@@ -74,6 +76,11 @@ puts 'Completed Seeding Drinks'
 @cream = Ingredient.where(name: 'Heavy cream').first
 @limejuice = Ingredient.where(name: 'Lime juice').first
 @melonliq = Ingredient.where(name: 'Midori melon liqueur').first
+@lime = Ingredient.where(name: 'Lime').first
+@sugar = Ingredient.where(name: 'Sugar').first
+@cachaca = Ingredient.where(name: 'Cachaca').first
+@mintleaves = Ingredient.where(name: 'Mint leaves').first
+@bourbon = Ingredient.where(name: 'Bourbon').first
 
 puts ' '
 
@@ -211,6 +218,60 @@ Dose.create(description: '0.5 Oz',
   cocktail: @marg,
   ingredient: @syrup)
 
+puts ' '
 
+puts 'Making you a drink: Caipirinha'
+
+puts '🍸'
+
+Dose.create(description: '1/2',
+  cocktail: @caipi,
+  ingredient: @lime)
+
+Dose.create(description: '2 Tsp',
+  cocktail: @caipi,
+  ingredient: @sugar)
+
+Dose.create(description: '2 Oz',
+  cocktail: @caipi,
+  ingredient: @cachaca)
+
+puts ' '
+
+puts 'Making you a drink: Mint Julep'
+
+puts '🍸'
+
+Dose.create(description: '0.25 Oz',
+  cocktail: @mintjul,
+  ingredient: @syrup)
+
+Dose.create(description: '8',
+  cocktail: @mintjul,
+  ingredient: @mintleaves)
+
+Dose.create(description: '2 Oz',
+  cocktail: @mintjul,
+  ingredient: @bourbon)
+
+puts ' '
+
+puts 'Making you a drink: Mai Tai'
+
+puts '🍸'
+
+
+puts ' '
+
+puts 'Making you a drink: Mojito'
+
+puts '🍸'
+
+
+puts ' '
+
+puts 'Making you a drink: White Russian'
+
+puts '🍸'
 
 puts 'Done... Enjoy!'
