@@ -50,9 +50,6 @@ puts 'Seeding Sample Cocktails'
 @mintjul = Cocktail.create(name: 'Mint Julep',
   user: @sy,
   remote_photo_url: 'https://www.monin.com/us/media/catalog/product/cache/d8269468375af5c918c1809561ea76bf/B/l/Blueberry_Mint_Julep-1534128413-0.png')
-@maitai = Cocktail.create(name: 'Mai Tai',
-  user: @sy,
-  remote_photo_url: 'https://sensationaldrinks.com/media/1287/mai-tai.png')
 @mojito = Cocktail.create(name: 'Mojito',
   user: @sy,
   remote_photo_url: 'https://d32miag6ta013h.cloudfront.net/master_cocktails/185/en-gl/small/bacardi-mojito_sml_580x820..png')
@@ -81,6 +78,7 @@ puts 'Completed Seeding Drinks'
 @cachaca = Ingredient.where(name: 'Cachaca').first
 @mintleaves = Ingredient.where(name: 'Mint leaves').first
 @bourbon = Ingredient.where(name: 'Bourbon').first
+@kahlua = Ingredient.where(name: 'Kahlua').first
 
 puts ' '
 
@@ -256,22 +254,42 @@ Dose.create(description: '2 Oz',
 
 puts ' '
 
-puts 'Making you a drink: Mai Tai'
-
-puts '🍸'
-
-
-puts ' '
-
 puts 'Making you a drink: Mojito'
 
 puts '🍸'
 
+Dose.create(description: '2 Oz',
+  cocktail: @mojito,
+  ingredient: @lrum)
+
+Dose.create(description: '3',
+  cocktail: @mojito,
+  ingredient: @mintleaves)
+
+Dose.create(description: '0.75 Oz',
+  cocktail: @mojito,
+  ingredient: @lemonjuice)
+
+Dose.create(description: '0.5 Oz',
+  cocktail: @mojito,
+  ingredient: @syrup)
 
 puts ' '
 
 puts 'Making you a drink: White Russian'
 
 puts '🍸'
+
+Dose.create(description: '2 Oz',
+  cocktail: @russian,
+  ingredient: @vodka)
+
+Dose.create(description: '1 Oz',
+  cocktail: @russian,
+  ingredient: @kahlua)
+
+Dose.create(description: 'Splash of',
+  cocktail: @russian,
+  ingredient: @cream)
 
 puts 'Done... Enjoy!'
