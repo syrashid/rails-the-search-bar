@@ -69,6 +69,13 @@ puts 'Completed Seeding Drinks'
 @lemonjuice = Ingredient.where(name: 'Lemon juice').first
 @syrup = Ingredient.where(name: 'Sugar Syrup').first
 @clubsoda = Ingredient.where(name: 'Carbonated water').first
+@pineapplejuice = Ingredient.where(name: 'Pineapple juice').first
+@drum = Ingredient.where(name: 'Spiced rum').first
+@cream = Ingredient.where(name: 'Heavy cream').first
+@limejuice = Ingredient.where(name: 'Lime juice').first
+@melonliq = Ingredient.where(name: 'Midori melon liqueur').first
+
+puts ' '
 
 puts 'Making you a drink: Tom Collins'
 
@@ -102,7 +109,7 @@ Dose.create(description: '2 Oz',
 
 puts ' '
 
-puts puts 'Making you a drink: Apple Martini'
+puts 'Making you a drink: Apple Martini'
 
 puts '🍸'
 
@@ -122,7 +129,9 @@ Dose.create(description: '1 Oz',
   cocktail: @appletini,
   ingredient: @applejack)
 
-puts puts 'Making you a drink: Long Island Iced Tea'
+puts ' '
+
+puts 'Making you a drink: Long Island Iced Tea'
 
 puts '🍸'
 
@@ -153,5 +162,55 @@ Dose.create(description: '0.75 Oz',
 Dose.create(description: '0.75 Oz',
   cocktail: @liit,
   ingredient: @lemonjuice)
+
+puts ' '
+
+puts 'Making you a drink: Pina Colada'
+
+puts '🍸'
+
+Dose.create(description: '1.5 Oz',
+  cocktail: @pina,
+  ingredient: @lrum)
+
+Dose.create(description: '2 Oz Coconut',
+  cocktail: @pina,
+  ingredient: @cream)
+
+Dose.create(description: '2 Oz',
+  cocktail: @pina,
+  ingredient: @pineapplejuice)
+
+Dose.create(description: '2 Cups',
+  cocktail: @pina,
+  ingredient: @ice)
+
+Dose.create(description: '0.5 Oz',
+  cocktail: @pina,
+  ingredient: @drum)
+
+puts ' '
+
+puts 'Making you a drink: Margarita'
+
+puts '🍸'
+
+Dose.create(description: '2 Oz',
+  cocktail: @marg,
+  ingredient: @tequila)
+
+Dose.create(description: '1 Oz',
+  cocktail: @marg,
+  ingredient: @limejuice)
+
+Dose.create(description: '0.5 Oz',
+  cocktail: @marg,
+  ingredient: @melonliq)
+
+Dose.create(description: '0.5 Oz',
+  cocktail: @marg,
+  ingredient: @syrup)
+
+
 
 puts 'Done... Enjoy!'
