@@ -31,7 +31,7 @@
   <%= javascript_pack_tag 'application' %>
   <script>
     // For Toggling the Dose Form
-    const toggleForm = () => {
+    var toggleForm = () => {
       var ingredientForm = document.getElementById("ingredient-form");
       if (ingredientForm.style.display === "block") {
         ingredientForm.style.display = "none";
