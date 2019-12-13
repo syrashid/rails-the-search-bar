@@ -1,14 +1,14 @@
 require 'open-uri'
 require 'json'
 
-puts 'Destroying Old Doses...'
-Dose.destroy_all
-puts 'Destroying Old Cocktails...'
-Cocktail.destroy_all
-puts 'Destroying Old Ingredients...'
-Ingredient.destroy_all
-puts 'Destroying Old Users...'
-User.destroy_all
+# puts 'Destroying Old Doses...'
+# Dose.destroy_all
+# puts 'Destroying Old Cocktails...'
+# Cocktail.destroy_all
+# puts 'Destroying Old Ingredients...'
+# Ingredient.destroy_all
+# puts 'Destroying Old Users...'
+# User.destroy_all
 
 puts 'Seeding New Ingredients...'
 print '['
@@ -291,5 +291,23 @@ Dose.create(description: '1 Oz',
 Dose.create(description: 'Splash of',
   cocktail: @russian,
   ingredient: @cream)
+
+puts ' '
+
+puts 'Adding Reviews for Drinks'
+
+puts '🤔'
+
+@sample_reviews = ['Wonderful drink', 'Super tasty', 'Loved it!', "It's all about balance", 'Loved making it', 'Not the drink for me', 'Yum yum yum', 'Loved it at night, hated it the next morning!']
+
+@cocktails = Cocktail.all
+
+@cocktails.each do |cocktail|
+  rand(5..10).times do
+    Review.create(text: @sample_reviews.sample,
+                  rating: rand(2..5),
+                  cocktail: cocktail)
+  end
+end
 
 puts 'Done... Enjoy!'
