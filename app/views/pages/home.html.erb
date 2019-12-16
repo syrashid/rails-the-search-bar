@@ -20,8 +20,9 @@
 </div>
 
 <a id="press-start-anchor">
-  <div class="button-splash d-flex justify-content-center align-items-center">
+  <div class="button-splash d-flex justify-content-center align-items-center"  onmouseenter ="moveZero();">
     <%= link_to "PRESS START", cocktails_path, class: "press-start blinking" %>
+    <%= image_tag "zero.gif", alt: "zero running", class: "zero" %>
   </div>
 </a>
 

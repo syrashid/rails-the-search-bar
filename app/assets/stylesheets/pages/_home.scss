@@ -12,6 +12,7 @@
 .button-splash {
   width: 100vw;
   height: 100vh;
+  position: relative;
 }
 
 .press-start {
@@ -25,6 +26,12 @@
   }
 }
 
+.zero {
+  width: 120px;
+  position: absolute;
+  left: -15vh;
+  display: none;
+}
 .blinking{
   animation:blinkingText 0.75s infinite;
 }

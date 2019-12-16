@@ -18,13 +18,13 @@
 
 <body>
   <% unless current_page?(root_path) %>
-    <%= render 'shared/navbar' %>
+  <%= render 'shared/navbar' %>
   <% end %>
   <% if notice %>
-    <p class="notice"><%= notice %></p>
+  <p class="notice"><%= notice %></p>
   <% end %>
   <% if alert %>
-    <p class="alert"><%= alert %></p>
+  <p class="alert"><%= alert %></p>
   <% end %>
   <%= yield %>
   <%= javascript_include_tag "application" %>
@@ -40,6 +40,24 @@
       }
     }
 
+    const blackscreen = document.querySelector(".button-splash");
+
+    var moveZero = () => {
+      console.log("we in it")
+      var elem = document.querySelector(".zero");
+      elem.style.display = "block";
+      var pos = -10;
+      var id = setInterval(frame, 60);
+      function frame() {
+        if (pos == 100) {
+          clearInterval(id);
+          elem.style.display = "none";
+        } else {
+          pos++;
+          elem.style.left = pos + 'vw';
+        }
+      }
+    }
     // Javascript side random color picker
     // var labels = document.querySelectorAll('.label')
     // var colors = [
