@@ -8,19 +8,6 @@ require 'json'
 # puts 'Destroying Old Users...'
 # User.destroy_all
 
-puts 'Seeding New Ingredients...'
-print '['
-url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
-ingredients = JSON.parse(open(url).read)['drinks']
-ingredients.each do |ingredient|
-  Ingredient.create(name: ingredient['strIngredient1'])
-  print '+ '
-end
-Ingredient.create(name: 'Cachaca')
-Ingredient.create(name: 'Mint leaves')
-puts ']'
-puts 'Completed Seeding Ingredients'
-
 @sy = User.create(first_name: 'Sy',
   last_name: 'Rashid',
   email: 'sy@gmail.com',
@@ -55,6 +42,19 @@ puts 'Seeding Sample Cocktails'
   user: @sy,
   remote_photo_url: 'https://images.cocktailflow.com/v1/cocktail/w_300,h_540/cocktail_white_russian-1.png')
 puts 'Completed Seeding Drinks'
+
+puts 'Seeding New Ingredients...'
+print '['
+url = 'https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list'
+ingredients = JSON.parse(open(url).read)['drinks']
+ingredients.each do |ingredient|
+  Ingredient.create(name: ingredient['strIngredient1'])
+  print '+ '
+end
+Ingredient.create(name: 'Cachaca')
+Ingredient.create(name: 'Mint leaves')
+puts ']'
+puts 'Completed Seeding Ingredients'
 
 @ice = Ingredient.where(name: 'Ice').first
 @vodka = Ingredient.where(name: 'Vodka').first
