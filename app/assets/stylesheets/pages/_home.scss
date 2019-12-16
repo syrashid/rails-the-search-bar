@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 .splash {
   height: 100vh;
-  background: linear-gradient(180deg, rgba(10, 10, 10, 0.1372) 58.31%, rgba(0, 0, 0, 0.9016) 95.44%, rgba(0, 0, 0, 0.98) 95.45%), image-url("landscape.gif") no-repeat center center;
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.1372) 58.31%, rgba(0, 0, 0, 0.9016) 95.44%, rgba(0, 0, 0, 0.98) 95.45%), url("landscape.gif") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
