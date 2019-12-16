@@ -5,8 +5,6 @@ require 'json'
 # Dose.destroy_all
 # puts 'Destroying Old Cocktails...'
 # Cocktail.destroy_all
-puts 'Destroying Old Ingredients...'
-Ingredient.destroy_all
 # puts 'Destroying Old Users...'
 # User.destroy_all
 
