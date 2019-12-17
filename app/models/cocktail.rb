@@ -1,5 +1,5 @@
 class Cocktail < ApplicationRecord
-  searchkick
+  # searchkick
 
   has_many :doses, dependent: :destroy
   has_many :ingredients, through: :doses
@@ -11,8 +11,18 @@ class Cocktail < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
-  def search_data
-    { name: name,
-      ingredient_names: ingredients.map(&:name) }
-  end
+  include PgSearch::Model
+  pg_search_scope :cocktail_search,
+  against: [:name],
+  associated_against: {
+    ingredients: [:name]
+  },
+  using: {
+    tsearch: { prefix: true }
+  }
+
+  # def search_data
+  #   { name: name,
+  #     ingredient_names: ingredients.map(&:name) }
+  # end
 end

@@ -1,6 +1,6 @@
 class Dose < ApplicationRecord
-  after_create :reindex_cocktail
-  after_destroy :reindex_cocktail
+  # after_create :reindex_cocktail
+  # after_destroy :reindex_cocktail
 
   belongs_to :cocktail
   belongs_to :ingredient
@@ -11,7 +11,7 @@ class Dose < ApplicationRecord
 
   private
 
-  def reindex_cocktail
-    cocktail.reindex
-  end
+  # def reindex_cocktail
+  #   cocktail.reindex
+  # end
 end
