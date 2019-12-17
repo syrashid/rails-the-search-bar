@@ -12,9 +12,7 @@ class Cocktail < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   def search_data
-    attributes.merge(
-      user_name: user(&:first_name),
-      ingredient_names: ingredients.map(&:name)
-    )
+    { name: name,
+      ingredient_names: ingredients.map(&:name) }
   end
 end
