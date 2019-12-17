@@ -3,7 +3,8 @@ class CocktailsController < ApplicationController
 
   def index
     @cocktails = policy_scope(Cocktail)
-    @cocktails = Cocktail.search(params[:query]) if params[:query].present?
+    elastic_query = { fields: [:name, :ingredient_names] }
+    @cocktails = Cocktail.search(params[:query], elastic_query) if params[:query].present?
   end
 
   def show
