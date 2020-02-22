@@ -19,9 +19,13 @@ import 'bootstrap';
 // app/javascript/packs/application.js
 // Requiring CSS! Path is relative to ./node_modules
 import 'select2/dist/css/select2.css';
-
+import { initToggleForm } from '../components/toggle';
+import { initMoveZero } from '../components/moveZero';
 import { initSelect2 } from '../components/init_select2';
 
+
+initToggleForm();
+initMoveZero();
 initSelect2();
 
 

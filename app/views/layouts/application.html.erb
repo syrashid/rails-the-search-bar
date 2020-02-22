@@ -30,35 +30,6 @@
   <%= yield %>
   <%= javascript_include_tag "application" %>
   <%= javascript_pack_tag 'application' %>
-  <script>
-    // For Toggling the Dose Form
-    var toggleForm = () => {
-      var ingredientForm = document.getElementById("ingredient-form");
-      if (ingredientForm.style.display === "block") {
-        ingredientForm.style.display = "none";
-      } else {
-        ingredientForm.style.display = "block";
-      }
-    }
-
-    const blackscreen = document.querySelector(".button-splash");
-
-    var moveZero = () => {
-      var elem = document.querySelector(".zero");
-      elem.style.display = "block";
-      var pos = -10;
-      var id = setInterval(frame, 60);
-      function frame() {
-        if (pos == 100) {
-          clearInterval(id);
-          elem.style.display = "none";
-        } else {
-          pos++;
-          elem.style.left = pos + 'vw';
-        }
-      }
-    }
-  </script>
   <%= render 'shared/flashes' %>
 </body>
 </html>
