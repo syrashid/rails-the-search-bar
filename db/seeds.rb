@@ -17,9 +17,9 @@ puts 'Seeding Sample Cocktails'
 @tom = Cocktail.create(name: 'Tom Collins',
  user: @sy,
  remote_photo_url: 'https://i-love-png.com/images/333610_thumb.png')
-@appletini = Cocktail.create(name: 'Apple Martini',
-  user: @sy,
-  remote_photo_url: 'https://www.trzcacak.rs/myfile/full/424-4249027_clipart-library-library-ideas-for-the-house-apple.png')
+# @appletini = Cocktail.create(name: 'Apple Martini',
+#   user: @sy,
+#   remote_photo_url: 'https://www.trzcacak.rs/myfile/full/424-4249027_clipart-library-library-ideas-for-the-house-apple.png')
 @liit = Cocktail.create(name: 'Long Island Ice Tea',
   user: @sy,
   remote_photo_url: 'https://cdn.shopify.com/s/files/1/0038/6049/6433/products/long-island-ice-tea_1080x.png?v=1569854167')
@@ -32,9 +32,9 @@ puts 'Seeding Sample Cocktails'
 @caipi = Cocktail.create(name: 'Caipirinha',
   user: @sy,
   remote_photo_url: 'https://bartenderonduty.ch/wp-content/uploads/2018/08/132-1.png')
-@mintjul = Cocktail.create(name: 'Mint Julep',
-  user: @sy,
-  remote_photo_url: 'https://www.monin.com/us/media/catalog/product/cache/d8269468375af5c918c1809561ea76bf/B/l/Blueberry_Mint_Julep-1534128413-0.png')
+# @mintjul = Cocktail.create(name: 'Mint Julep',
+#   user: @sy,
+#   remote_photo_url: 'https://www.monin.com/us/media/catalog/product/cache/d8269468375af5c918c1809561ea76bf/B/l/Blueberry_Mint_Julep-1534128413-0.png')
 @mojito = Cocktail.create(name: 'Mojito',
   user: @sy,
   remote_photo_url: 'https://d32miag6ta013h.cloudfront.net/master_cocktails/185/en-gl/small/bacardi-mojito_sml_580x820..png')
