@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'pages/home'
+  root to: 'pages#home'
   devise_for :users
   resources :cocktails, only: [:index, :show, :new, :create] do
     resources :doses, only: [:create]
@@ -11,5 +11,4 @@ Rails.application.routes.draw do
       resources :cocktails, only: [:index, :show, :update, :create ]
     end
   end
-  root to: 'pages#home'
 end
