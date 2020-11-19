@@ -2,7 +2,8 @@ require 'open-uri'
 require 'json'
 
 puts 'Destroying Old Cocktails...'
-Cocktail.destroy_all
+Cocktail.
+
 puts 'Destroying Old Users...'
 User.destroy_all
 
@@ -202,7 +203,7 @@ Dose.create(description: '2 Oz',
   cocktail: @caipi,
   ingredient: @cachaca)
 
-puts ' '
+puts ' 'P
 
 puts 'Making you a drink: Mojito'
 
